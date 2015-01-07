@@ -1,0 +1,23 @@
+<h1>
+    to<span class="red">do</span>
+</h1>
+
+<%= form_for :task do |t| %>
+    <%= t.text_field :name, :placeholder => "what should be done?" %>
+<% end %>
+
+<ul>
+    <% @tasks.each do |task| %>
+        <li class="<%= task.status ? 'done' : '' %>">
+            <a class="do-mark-as-done" href="javascript:;">
+                &#10003;
+            </a>
+
+            <span class="name"><%= task.name %></span>
+
+            <%= link_to '&times;'.html_safe, task_path(task),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+        </li>
+    <% end %>
+</ul>

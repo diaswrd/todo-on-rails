@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
+  # Old school router definition
+  #   get 'tasks/index'
+  #   post 'tasks/index' => 'tasks#create'
+
+  # The resources call below is necessary to allow me to use new_task_path and task_path
+  # at the task views. Use "resources" for just index and create sounds a little overkill
+  # but I didn't found another simple way to do that.
+  resources :tasks
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'tasks#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
