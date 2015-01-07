@@ -8,7 +8,7 @@
 
 <ul>
     <% @tasks.each do |task| %>
-        <li class="<%= task.status ? 'done' : '' %>">
+        <li class="<%= task.done ? 'done' : '' %>">
             <a class="do-mark-as-done" href="javascript:;">
                 &#10003;
             </a>
