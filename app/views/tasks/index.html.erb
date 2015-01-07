@@ -9,14 +9,20 @@
 <ul>
     <% @tasks.each do |task| %>
         <li class="<%= task.done ? 'done' : '' %>">
-            <%= link_to '&#10003;'.html_safe, action: 'mark_as_done', :id => task.id %>
+            <%=
+              link_to '&#10003;'.html_safe,
+              { action: 'mark_as_done', id: task.id },
+              class: 'done'
+            %>
 
             <span class="name"><%= task.name %></span>
 
             <%=
-              link_to '&times;'.html_safe, task_path(task),
-              method: :delete,
-              data: { confirm: 'Are you sure?' }
+              link_to '&times;'.html_safe,
+              task_path(task),
+              :method => :delete,
+              data: { confirm: 'Are you sure?' },
+              class: 'delete'
             %>
         </li>
     <% end %>

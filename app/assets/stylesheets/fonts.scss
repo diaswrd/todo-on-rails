@@ -1,0 +1,24 @@
+// Custom fonts
+@font-face {
+    font-family: 'robotoregular';
+    src: url('roboto-regular.eot');
+    src: url('roboto-regular.eot?#iefix') format('embedded-opentype'),
+         url('roboto-regular.woff2') format('woff2'),
+         url('roboto-regular.woff') format('woff'),
+         url('roboto-regular.ttf') format('truetype'),
+         url('roboto-regular.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotothin_italic';
+    src: url('roboto-thinitalic.eot');
+    src: url('roboto-thinitalic.eot?#iefix') format('embedded-opentype'),
+         url('roboto-thinitalic.woff2') format('woff2'),
+         url('roboto-thinitalic.woff') format('woff'),
+         url('roboto-thinitalic.ttf') format('truetype'),
+         url('roboto-thinitalic.svg#robotothin_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
