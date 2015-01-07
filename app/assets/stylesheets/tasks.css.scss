@@ -47,26 +47,35 @@ ul li {
     color: #333;
 }
 
-ul li a {
-    color: #999;
+ul {
+    li {
+        a {
+            color: #999;
+        }
+
+        a.done {
+            margin-right: 15px;
+        }
+        a.done:hover {
+            color: #4CAF50;
+        }
+
+        a.delete {
+            float: right;
+        }
+        a.delete:hover {
+            color: red;
+        }
+    }
 }
 
-ul li a.done {
-    margin-right: 15px;
-}
-ul li a.done:hover,
-ul li.done a.done {
-    color: #4CAF50;
-}
+ul li.done {
+    a.done {
+        color: #4CAF50;
+    }
 
-ul li a.delete {
-    float: right;
-}
-ul li a.delete:hover {
-    color: red;
-}
-
-ul li.done .name {
-    color: #D0CFCF;
-    text-decoration: line-through;
+    .name {
+        color: #D0CFCF;
+        text-decoration: line-through;
+    }
 }
