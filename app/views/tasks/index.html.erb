@@ -9,15 +9,15 @@
 <ul>
     <% @tasks.each do |task| %>
         <li class="<%= task.done ? 'done' : '' %>">
-            <a class="do-mark-as-done" href="javascript:;">
-                &#10003;
-            </a>
+            <%= link_to '&#10003;'.html_safe, action: 'mark_as_done', :id => task.id %>
 
             <span class="name"><%= task.name %></span>
 
-            <%= link_to '&times;'.html_safe, task_path(task),
+            <%=
+              link_to '&times;'.html_safe, task_path(task),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+              data: { confirm: 'Are you sure?' }
+            %>
         </li>
     <% end %>
 </ul>

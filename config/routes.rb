@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   # but I didn't found another simple way to do that.
   resources :tasks
 
+  # Additional routes
+  get 'tasks/mark_as_done/:id' => 'tasks#mark_as_done'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -17,6 +17,14 @@ class TasksController < ApplicationController
     redirect_to action: "index"
   end
 
+  def mark_as_done
+    @task = Task.find(params[:id])
+    @task.done = !@task.done
+    @task.save
+
+    redirect_to action: "index"
+  end
+
   private
     def task_params
       params.require(:task).permit(:name)
